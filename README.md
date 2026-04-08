@@ -176,3 +176,55 @@ Die finale Implementierung wurde eigenständig verstanden und angepasst.
 Die Anwendung erfüllt alle Kernanforderungen der Aufgabenstellung und wurde zusätzlich um sinnvolle UX- und API-Features erweitert.
 
 ---
+
+## 🔌 REST API
+
+Die Anwendung stellt eine einfache REST API zur Verfügung:
+
+### 📅 Tagesansicht abrufen
+
+GET /api/bookings?date=YYYY-MM-DD
+
+**Beispiel:**
+GET /api/bookings?date=2026-04-08
+
+---
+
+### ➕ Buchung erstellen
+
+POST /api/bookings
+
+**Body (JSON):**
+{
+"bookingDate": "2026-04-08",
+"startHour": 9,
+"durationHours": 2,
+"name": "Max Mustermann",
+"purpose": "Gruppenarbeit"
+}
+
+---
+
+### ❌ Buchung stornieren
+
+DELETE /api/bookings/:token
+
+**Beispiel:**
+DELETE /api/bookings/abc123token
+
+## 💡 Eigene Erweiterungen
+
+Folgende zusätzliche Ideen wurden umgesetzt:
+
+- ✔ Storno-Token-System zur sicheren Löschung von Buchungen
+- ✔ Dynamische Anzeige belegter Zeiträume
+- ✔ Validierung von Eingaben (z. B. Zeiträume, Name)
+- ✔ Visuelle Unterscheidung zwischen freien und belegten Slots
+- ✔ Responsive UI mit Bootstrap
+
+Mögliche Erweiterungen:
+
+- Benutzerverwaltung (Login)
+- Mehrere Räume verwalten
+- Kalenderansicht (Woche/Monat)
+- E-Mail-Benachrichtigung bei Buchung
