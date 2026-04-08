@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS bookings (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  booking_date TEXT NOT NULL,
+  start_hour INTEGER NOT NULL,
+  duration_hours INTEGER NOT NULL,
+  name TEXT NOT NULL,
+  purpose TEXT,
+  cancel_token TEXT NOT NULL UNIQUE,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
